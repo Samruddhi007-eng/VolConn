@@ -33,7 +33,9 @@ const Login = () => {
 
       // Save to localStorage
       localStorage.setItem('token', res.data.token);
-      localStorage.setItem('userName', res.data.user.name); 
+      localStorage.setItem('userName', res.data.user.name);
+      localStorage.setItem('userId', res.data.user.id);
+      localStorage.setItem('userRole', res.data.user.role);
 
       // Redirect logic
       if (res.data.user.role === 'volunteer') {

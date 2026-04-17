@@ -32,6 +32,12 @@ const Register = () => {
 
       // Save token and user info
       localStorage.setItem('token', res.data.token);
+      localStorage.setItem('userName', res.data.user.name);
+      localStorage.setItem('userId', res.data.user.id);
+      localStorage.setItem('userRole', res.data.user.role);
+      if (role === 'volunteer' && skillArray.length) {
+        localStorage.setItem('userSkills', JSON.stringify(skillArray));
+      }
       
       // Redirect based on role
       if (res.data.user.role === 'volunteer') navigate('/volunteer-dashboard');
